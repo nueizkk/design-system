@@ -19,8 +19,8 @@ type Story = StoryObj<typeof Sidebar>;
 const CLIENT_MENUS: SidebarItemType[] = [
   { value: '/', label: '대시보드', icon: Icon.Dashboard },
   { value: '/organization', label: '조직', icon: Icon.Building },
-  { value: '/wallet', label: '플랫폼 지갑', icon: Icon.Wallet },
-  { value: '/funding-accounts', label: '고객지갑', icon: Icon.ExternalFund },
+  { value: '/members', label: '회원 관리', icon: Icon.Profile },
+  { value: '/billing', label: '결제 관리', icon: Icon.Creditcard },
   { value: '/activity', label: '활동 로그', icon: Icon.ActivityLog },
   {
     value: '/support',
@@ -37,12 +37,12 @@ const CLIENT_MENUS: SidebarItemType[] = [
 const ADMIN_MENUS: SidebarItemType[] = [
   { value: '/', label: '대시보드', icon: Icon.Dashboard },
   {
-    value: '/deposit',
-    label: '입금 관리',
-    icon: Icon.Withdrawal,
+    value: '/orders',
+    label: '주문 관리',
+    icon: Icon.Settlement,
     items: [
-      { value: '/deposit/ticket', label: '입금 티켓' },
-      { value: '/deposit/wrong', label: '오입금 티켓' },
+      { value: '/orders/list', label: '주문 내역' },
+      { value: '/orders/refund', label: '취소·환불' },
     ],
   },
   {
@@ -55,12 +55,12 @@ const ADMIN_MENUS: SidebarItemType[] = [
     ],
   },
   {
-    value: '/block',
-    label: '차단 관리',
-    icon: Icon.Block,
+    value: '/roles',
+    label: '권한 관리',
+    icon: Icon.Role,
     items: [
-      { value: '/block/transfer', label: '입출금 차단' },
-      { value: '/block/service', label: '서비스 차단' },
+      { value: '/roles/members', label: '멤버 권한' },
+      { value: '/roles/policy', label: '접근 정책' },
     ],
   },
 ];

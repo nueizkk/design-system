@@ -23,7 +23,7 @@ type Story = StoryObj<typeof Layout>;
 const MENUS: SidebarItemType[] = [
   { value: '/', label: '대시보드', icon: Icon.Dashboard },
   { value: '/organization', label: '조직', icon: Icon.Building },
-  { value: '/wallet', label: '플랫폼 지갑', icon: Icon.Wallet },
+  { value: '/members', label: '회원 관리', icon: Icon.Profile },
   {
     value: '/support',
     label: '고객센터',
