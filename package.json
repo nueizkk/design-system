@@ -1,0 +1,103 @@
+{
+  "name": "@0529th/ds",
+  "version": "2.0.0",
+  "description": "ds design system package",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.cjs"
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icons.js",
+      "require": "./dist/icons.cjs"
+    },
+    "./tailwind": {
+      "types": "./dist/tailwind.d.ts",
+      "import": "./dist/tailwind.js",
+      "require": "./dist/tailwind.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./tailwind.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "tokens": [
+        "./dist/tokens.d.ts"
+      ],
+      "tailwind": [
+        "./dist/tailwind.d.ts"
+      ],
+      "icons": [
+        "./dist/icons.d.ts"
+      ],
+      "*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "pnpm package-build && pnpm css-build",
+    "package-build": "tsup",
+    "css-build": "postcss ./src/styles/global.css -o ./dist/styles.css",
+    "pack:local": "pnpm build && pnpm pack",
+    "tsc": "tsc --noEmit",
+    "test": "jest",
+    "storybook": "pnpm package-build && storybook dev -p 6006",
+    "build-storybook": "pnpm package-build && storybook build -o storybook-static --disable-telemetry"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "lodash": "^4.17.21",
+    "react-modern-drawer": "^1.2.2",
+    "react-toastify": "^11.1.0",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^10.5.9",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.6.5",
+    "@types/jest": "^30.0.0",
+    "@types/lodash": "^4.17.1",
+    "@types/node": "^20.5.2",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10",
+    "jest": "^30.4.2",
+    "jest-date-mock": "^1.0.10",
+    "jest-environment-jsdom": "^30.4.1",
+    "postcss": "^8",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "storybook": "^10.5.9",
+    "tailwindcss": "3.4.1",
+    "ts-jest": "^29.4.12",
+    "tsup": "^8.1.0",
+    "typescript": "^5.1.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19",
+    "react-dom": "^18.2.0 || ^19"
+  },
+  "packageManager": "pnpm@11.5.1"
+}

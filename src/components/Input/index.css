@@ -1,0 +1,27 @@
+.default-input[type='number']::-webkit-inner-spin-button,
+.default-input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.default-input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* 자동 완성 스타일 변경 */
+.default-input-default:-webkit-autofill,
+.default-input-default:-webkit-autofill:hover,
+.default-input-default:-webkit-autofill:focus,
+.default-input-default:-internal-autofill-selected {
+  transition: background-color 50000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-label-normal) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-background-normal) inset;
+}
+.default-input-disabled:-webkit-autofill,
+.default-input-disabled:-webkit-autofill:hover,
+.default-input-disabled:-webkit-autofill:focus,
+.default-input-disabled:-internal-autofill-selected {
+  transition: background-color 50000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-label-disable) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-interaction-disable) inset;
+}

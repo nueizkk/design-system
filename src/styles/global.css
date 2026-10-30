@@ -1,0 +1,77 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '../components/Input/index.css';
+@import '../components/Toast/style.css';
+@import '../components/Sidebar/style.css';
+@import '../components/Drawer/style.css';
+
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr {
+  margin: 0;
+}
+
+hr {
+  border-bottom: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+@layer utilities {
+  .interaction-no-hover {
+    @apply after:bg-interaction-hover/12 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:block;
+
+    & > * {
+      @apply relative z-[1];
+    }
+  }
+
+  .interaction {
+    @apply hover:after:bg-interaction-hover/12 relative after:pointer-events-none after:hidden hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:top-0 hover:after:block;
+
+    & > * {
+      @apply relative z-[1];
+    }
+  }
+
+  /** 모달·드로워가 열려 있는 동안 배경이 스크롤되지 않게 한다. */
+  .scroll-lock {
+    @apply !overflow-hidden;
+  }
+
+  .no-interaction {
+    @apply after:hidden;
+  }
+
+  .interaction-before {
+    @apply hover:before:bg-interaction-hover/12 relative before:hidden hover:before:absolute hover:before:bottom-0 hover:before:left-0 hover:before:right-0 hover:before:top-0 hover:before:block;
+
+    & > * {
+      @apply relative z-[1];
+    }
+  }
+
+  .no-interaction-before {
+    @apply before:hidden;
+  }
+
+  .overlay {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:block;
+
+    & > * {
+      @apply relative z-[1];
+    }
+  }
+}

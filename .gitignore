@@ -1,0 +1,14 @@
+node_modules
+dist
+*.tgz
+.DS_Store
+.storybook/tailwind.generated.css
+
+# Figma 연동(사내 파일 참조)은 로컬 전용
+figma/
+.claude/skills/figma-apply-design-to-code/
+.claude/skills/figma-code-connect/
+.claude/skills/commit/
+.figma/
+Claude outputs/
+.claude/
